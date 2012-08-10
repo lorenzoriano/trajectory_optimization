@@ -1,0 +1,32 @@
+
+<launch> 
+<!--	<node pkg="chomp_motion_planner" name="chomp_motion_planner" type="chomp_planner_node" args="collision_map:=collision_map_occ" respawn="false" output="screen" clear_params="true" launch-prefix="gdb -ex run args ">-->
+
+	
+	<node pkg="chomp_motion_planner" name="chomp_motion_planner" type="chomp_planner_node" args="collision_map:=collision_map_occ" respawn="false" output="screen" clear_params="true">
+                <rosparam command="load" file="$(find chomp_motion_planner)/config/chomp_pr2_right_arm.yaml" />
+	
+		<param name="animate_path" value="false"/>
+		<param name="use_additional_trajectory_filter" value="false"/>		
+		<param name="trajectory_duration" value="3.0"/>
+		<param name="trajectory_discretization" value="0.02"/>
+		<param name="learning_rate" value="100.0" />
+<!-- 		<param name="learning_rate" value="0.1" /> -->
+		<param name="max_iterations" value="10000" />
+		<param name="max_iterations_after_collision_free" value="10" />
+		<param name="smoothness_cost_weight" value="0.000001"/>
+		<param name="obstacle_cost_weight" value="1.0" />
+		<param name="joint_update_limit" value="0.02" />
+		<param name="collision_threshold" value="0.005" />
+		<param name="smoothness_cost_velocity" value="0.0001" />
+		<param name="smoothness_cost_acceleration" value="0.00001" />
+		<param name="smoothness_cost_jerk" value="0.00001" />
+		<param name="add_randomness" value="false" />
+		
+		<param name="use_pseudo_inverse" value="false" />
+		<param name="pseudo_inverse_ridge_factor" value="0.1" />
+		
+		<param name="distance_cost_weight" value="10.0" />
+		
+	</node>
+</launch>

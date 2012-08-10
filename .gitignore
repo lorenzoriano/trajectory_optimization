@@ -10,3 +10,13 @@
 *.lai
 *.la
 *.a
+
+.cproject
+.project
+.pydevproject
+.settings/
+build/
+cmake_install.cmake
+srv_gen/
+msg_gen/
+*~
