@@ -126,7 +126,7 @@ bool TrajectoryOptimizerNode::init()
 
   // advertise the planning service
   plan_kinematic_path_service_ = root_handle_.advertiseService("trajectory_planner_longrange/plan_path", &TrajectoryOptimizerNode::planKinematicPath, this);
-  follow_trajectory_service_ = root_handle_.advertiseService("trajectory_planner_longrange/follow_trajectory", &TrajectoryOptimizerNode::followTrajectory, this);
+  follow_trajectory_service_ = root_handle_.advertiseService("trajectory_planner/trajectory_optimize", &TrajectoryOptimizerNode::followTrajectory, this);
 
   filter_joint_trajectory_service_ = root_handle_.advertiseService("trajectory_planner_longrange/filter_trajectory_with_constraints", &TrajectoryOptimizerNode::filterJointTrajectory, this);
 
