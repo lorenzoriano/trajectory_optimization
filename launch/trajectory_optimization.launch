@@ -3,8 +3,8 @@
 <!--	<node pkg="chomp_motion_planner" name="chomp_motion_planner" type="chomp_planner_node" args="collision_map:=collision_map_occ" respawn="false" output="screen" clear_params="true" launch-prefix="gdb -ex run args ">-->
 
 	
-	<node pkg="chomp_motion_planner" name="chomp_motion_planner" type="chomp_planner_node" args="collision_map:=collision_map_occ" respawn="false" output="screen" clear_params="true">
-                <rosparam command="load" file="$(find chomp_motion_planner)/config/chomp_pr2_right_arm.yaml" />
+	<node pkg="trajectory_optimization" name="trajectory_optimization" type="trajectory_optimizer_node" args="collision_map:=collision_map_occ" respawn="false" output="screen" clear_params="true">
+                <rosparam command="load" file="$(find trajectory_optimization)/config/chomp_pr2_right_arm.yaml" />
 	
 		<param name="animate_path" value="false"/>
 		<param name="use_additional_trajectory_filter" value="false"/>		
