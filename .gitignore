@@ -19,4 +19,5 @@ build/
 cmake_install.cmake
 srv_gen/
 msg_gen/
+bin/
 *~
