@@ -232,8 +232,8 @@ bool TrajectoryOptimizerNode::followTrajectory(verb_msgs::WeightedTrajectory::Re
 		ros::service::waitForService("/pr2_left_arm_kinematics/get_ik_solver_info");
 		ros::service::waitForService("/pr2_left_arm_kinematics/get_ik");
 
-		ik_query_client = node_handle_.serviceClient<kinematics_msgs::GetKinematicSolverInfo>("pr2_left_arm_kinematics/get_ik_solver_info");
-		ik_client = node_handle_.serviceClient<kinematics_msgs::GetPositionIK>("pr2_left_arm_kinematics/get_ik");
+        ik_query_client = node_handle_.serviceClient<kinematics_msgs::GetKinematicSolverInfo>("/pr2_left_arm_kinematics/get_ik_solver_info");
+        ik_client = node_handle_.serviceClient<kinematics_msgs::GetPositionIK>("/pr2_left_arm_kinematics/get_ik");
 	}
 
 	kinematics_msgs::GetKinematicSolverInfo::Request ik_info_request;
